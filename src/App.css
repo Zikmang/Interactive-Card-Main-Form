@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Space Grotesk', sans-serif; /* The design uses this specific font */
+}
+
+body {
+  font-size: 18px;
+  height: 90vh;
+}
+
+.main-layout {
+  display: flex;
+  gap: 1.5rem;
+  min-height: 100vh;
+  width: 100%;
+}
+/* Hero Section */
+.hero-section{
+  width: 35%;
+  position: relative;
+  color: white;
+}
+
+.gradient-bg{
+  background-image: url('./assets/images/bg-main-desktop.png'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* Cards */
+.card-front{
+  background-image: url('./assets/images/bg-card-front.png');
+  z-index: 2;
+  top: 10%;
+  left: 20%;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-front img{
+  width: 84px;
+}
+
+.card-no{
+  font-size: 1.75rem;
+  letter-spacing: 3px;
+  margin-top: auto;
+  margin-bottom: 1.5rem;
+  display: block;
+  white-space: nowrap;
+}
+
+.card-front > div:last-child {
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.card-front,
+.card-back {
+  position: absolute; 
+  width: 447px;          
+  height: 245px;     
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15); 
+  border-radius: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+
+.card-back{
+  background-image: url('./assets/images/bg-card-back.png');
+  top: 53%;
+  left: 35%;
+  z-index: 1;
+}
+
+.card-back span{
+  position: absolute;
+  right: 50px;
+  top: 45%;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.card-display-section {
+  width: 35%;
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+}
+.bottom-card{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bottom-card h1{
+  font-size: 0.9rem;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.success-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.success-card img{
+  width: 100px;
+}
+.success-card h1, .success-card p{
+  margin-bottom: 1.5rem;
+}
+
+.success-card p{
+  color: hsl(212, 12%, 71%);
+}
+/* Right Side: White Form Area */
+.form-section {
+  width: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.card-details-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 380px; 
+}
+
+/* --- FORM STYLING --- */
+.user-info {
+  color: hsl(278, 68%, 11%);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  display: block;
+  text-transform: uppercase;
+}
+
+.user-input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid hsl(212, 12%, 81%);
+  font-size: 1.125rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.user-input:focus {
+  border-color: hsl(278, 94%, 30%); 
+}
+
+.user-input::placeholder {
+  color: hsl(212, 12%, 81%);
+}
+
+.user-input.error {
+  border-color: #ff5252;
+}
+
+.error-msg {
+  color: #ff5252;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* --- BOTTOM ROW (Date & CVC) --- */
+.form-row {
+  display: flex;
+  gap: 1.5rem; 
+}
+
+.exp-date-group {
+  width: 50%;
+}
+
+.date-inputs {
+  display: flex;
+  gap: 0.5rem; 
+}
+
+.cvc-group {
+  width: 50%;
+}
+
+/* --- BUTTON --- */
+button {
+  background-color: hsl(278, 68%, 11%);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.125rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: hsl(278, 68%, 25%); 
+}
+
+/* --- MOBILE RESPONSIVENESS (Optional but good to have) --- */
+@media (max-width: 900px) {
+  .main-layout {
+    flex-direction: column; 
+  }
+  
+  .hero-section {
+    width: 100%;
+    height: 240px;
+    margin-bottom: 4rem; 
+  }
+  
+  .form-section {
+    width: 100%;
+    padding-top: 2rem;
+    margin-top: 5rem; 
+
+  }
+  
+  .card-display-section{
+    background-image: url(./assets/images/bg-main-mobile.png);
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .card-front, .card-back{
+    width: 286px;
+    height: 157px;
+  }
+
+  .card-front {
+    top: 65%;    
+    left: 5%;
+    transform: translateX(20%);
+    z-index: 5;
+    padding: 20px;
+  }
+  
+  .card-back {
+    top: 30px;
+    left: 50%;
+    transform: translateX(-40%);
+  }
+  .card-front img{width: 50px;}
+  .card-no {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  .card-front > div:last-child{font-size: 0.65rem;}
+  .card-back span {
+    right: 35px;
+    top: 45%;
+    font-size: 0.75rem;
+  }
+}
